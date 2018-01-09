@@ -13,7 +13,7 @@
     "php": ">=5.3.7",
     "composer/installers": "~1.0",
     "dsapps/phpexcel": "^1.8",
-    "dsapps/util_libs": "^1.0",
+    "dsapps/util": "^1.0",
     "dsapps/auth": "^1.0"
   }
 }
