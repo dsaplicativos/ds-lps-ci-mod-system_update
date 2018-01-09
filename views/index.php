@@ -6,7 +6,7 @@
             <?= $info['message'] ?>
         </div>
 
-        <form action="<?php echo base_url('refresh') ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url('system_update') ?>" method="post" enctype="multipart/form-data">
             <div class="card-block mt-3">
                 <div class="file-field">
                     <div class="btn btn-primary btn-sm">
