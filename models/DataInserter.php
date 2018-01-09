@@ -118,7 +118,7 @@ class DataInserter extends CI_Model {
     private function insertUserAgreement($user_id, $agreement_id) {
         $item['usuario_id'] = $user_id;
         $item['contrato_id'] = $agreement_id;
-        $this->dao->insert_os_update($item, 'contrato_funcionario');
+        $this->dao->insert_or_update($item, 'contrato_funcionario');
     }
 
 }
