@@ -25,7 +25,7 @@ class DataInserter extends CI_Model {
     public function __construct()
     {
         parent::__construct();
-        $this->load->library('util_libs/Dao');
+        $this->load->library('util/Dao');
     }
 
     /**
