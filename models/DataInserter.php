@@ -35,10 +35,14 @@ class DataInserter extends CI_Model {
     public function put($data) {
 //        Define os dados recebidos em atributo
         $this->spreadsheet = $data;
-
+        $skip = true;
         foreach ($data as $key => $value) {
             if ($value[0] == null) {
                 return;
+            }
+            if ($skip) {
+                $skip = false;
+                continue;
             }
 
             $role_id = $this->insertRole($value);
