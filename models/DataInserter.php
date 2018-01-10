@@ -44,6 +44,7 @@ class DataInserter extends CI_Model {
             $role_id = $this->insertRole($value);
             $agreement_id = $this->insertAgreement($value);
             $user_id = $this->insertUser($value, $role_id);
+            $this->setUserGroup($user_id, $value);
             $this->insertShift($value, $user_id);
             $this->insertUserAgreement($user_id, $agreement_id);
         }
@@ -96,6 +97,12 @@ class DataInserter extends CI_Model {
         $item['funcao_id'] = $role_id;
         $item['supervisor'] = $value[$this->getColumn('nomegestor')];
         return $this->dao->insert_or_update($item, 'users');
+    }
+
+    private function setUserGroup($user_id, $value) {
+        $item['user_id'] = $user_id;
+        $item['group_id'] = 5; //Funcionário
+        $this->dao->insert_or_update($item, 'users_groups');
     }
 
     /**
