@@ -52,6 +52,7 @@ class DataInserter extends CI_Model {
             $this->setUserGroup($user_id, $value);
             $this->insertShift($value, $user_id);
             $this->insertUserAgreement($user_id, $agreement_id);
+            return true;
         }
     }
 
