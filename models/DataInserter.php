@@ -33,8 +33,9 @@ class DataInserter extends CI_Model {
      * @param array $data
      */
     public function put($data) {
-//        Define os dados recebidos em atributo
+//        Define os dados recebidos em um atributo
         $this->spreadsheet = $data;
+//        Ignora a linha de labels na inserção
         $skip = true;
         foreach ($data as $key => $value) {
             if ($value[0] == null) {
@@ -90,7 +91,7 @@ class DataInserter extends CI_Model {
     /**
      * Insere ou atualiza os usuários
      * @param array $value
-     * @param $role_id
+     * @param int $role_id
      * @return int
      */
     private function insertUser($value, $role_id) {
@@ -103,6 +104,11 @@ class DataInserter extends CI_Model {
         return $this->dao->insert_or_update($item, 'users');
     }
 
+    /**
+     * Define novos usuários em um grupo padrão
+     * @param int $user_id
+     * @param array $value
+     */
     private function setUserGroup($user_id, $value) {
         $item['user_id'] = $user_id;
         $item['group_id'] = 5; //Funcionário

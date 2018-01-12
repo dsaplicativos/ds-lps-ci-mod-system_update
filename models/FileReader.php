@@ -79,7 +79,7 @@ class FileReader extends CI_Model {
 
     /**
      * Carrega o arquivo no componente PHPExcel e converte os dados para uma matriz
-     * @param $excelFile
+     * @param file $excelFile
      * @return bool
      */
     private function read($excelFile) {
