@@ -18,7 +18,7 @@ class FileReader extends CI_Model {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('system_update/DataInserter', 'inserter');
+        $this->load->model('DataInserter', 'inserter');
         $this->load->library('phpexcel/PHPExcel');
     }
 
