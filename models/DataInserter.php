@@ -33,14 +33,14 @@ class DataInserter extends CI_Model {
      * @param array $data
      */
     public function put($data) {
-//        Define os dados recebidos em um atributo
+//        Define os dados recebidos em atributo
         $this->spreadsheet = $data;
-//        Ignora a linha de labels na inserção
         $skip = true;
         foreach ($data as $key => $value) {
             if ($value[0] == null) {
                 return;
             }
+//            Ignora linha de labels
             if ($skip) {
                 $skip = false;
                 continue;
