@@ -56,13 +56,20 @@ class FileReader extends CI_Model {
 
         if ($this->upload->do_upload()) {
             $finfo = $this->upload->data();
-            $finfo['file_name'];
+            if (!$this->isSpreadsheet($finfo['file_name'])) {
+                return false;
+            }
             $data['uploadInfo'] = $finfo;
             $data['thumbnail_name'] = $finfo['raw_name'] . '_thumb' . $finfo['file_ext'];
             $url_file = $data['uploadInfo']['full_path'];
             if ($this->read($url_file))
                 return true;
         }
+    }
+
+    private function isSpreadsheet($fileName) {
+        $extension = explode('.', $fileName)[1];
+        return trim($extension) == 'xls' || $extension == 'xlsx' ? true : false;
     }
 
     /**
