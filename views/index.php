@@ -1,12 +1,12 @@
 <div class="container">
-    <div class="card mb-2 mt-5">
-        <h3 class="text-center"><i class="fa fa-cloud-upload mr-1"></i> Atualização do Sistema</h3><br>
+    <div class="card mb-2 mt-5 px-4 py-2">
+        <h3 class="text-center mt-3"><i class="fa fa-cloud-upload mr-1"></i> Atualização do Sistema</h3><br>
 
-        <div class="alert-<?= $info['color'] ?> text-center py-2">
+        <div class="alert-<?= $info['color'] ?> text-center py-3 px-3">
             <?= $info['message'] ?>
         </div>
 
-        <form action="<?php echo base_url('system_update') ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url('System_Update') ?>" method="post" enctype="multipart/form-data">
             <div class="card-block mt-3">
                 <div class="file-field">
                     <div class="btn btn-primary btn-sm">
