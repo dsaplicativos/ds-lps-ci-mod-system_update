@@ -94,7 +94,7 @@ class FileReader extends CI_Model {
         foreach ($objPHPExcel->getWorksheetIterator() as $worksheet) {
             $arrayData = $worksheet->toArray();
         }
-        if ($this->inserter->put($arrayData)) {
+        if ($this->inserter->put($arrayData) == true) {
             return true;
         }
     }
