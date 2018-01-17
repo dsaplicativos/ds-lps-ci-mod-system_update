@@ -15,7 +15,7 @@ class System_Update extends MY_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('system_update/FileReader', 'reader');
+        $this->load->model('FileReader', 'reader');
     }
 
     /**
