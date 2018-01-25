@@ -14,7 +14,7 @@
                         <input type="file" name="userfile">
                     </div>
                     <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" name="file_dl" placeholder="Planilha do Excel de efetivos.">
+                        <input class="file-path validate" type="text" name="file_dl" placeholder="(.xls, .xlsx)">
                     </div>
                 </div>
                 <div class="text-center mt-5 mb-4">
